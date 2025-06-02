@@ -15,10 +15,9 @@ CREATE TABLE queue (
   number INTEGER NOT NULL
 );
 
-CREATE TABLE queues (
+CREATE TABLE services (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  service_id INTEGER REFERENCES services(id) ON DELETE CASCADE,
-  status VARCHAR(20) DEFAULT 'pending', -- pending, approved, rejected
+  name VARCHAR(100) NOT NULL,
+  description TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
